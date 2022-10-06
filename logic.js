@@ -11,26 +11,35 @@ Array.from(but).forEach((button)=>{
         if (e.target.value == "Check"){
            
             if (turn > 1){
-                if (getNum.value > num){
+                if (getNum.value > 25){
                     document.querySelector('.annc').innerHTML="You Have Only "+ --turn +" Turns";
-                    document.querySelector('.hint').value="It's Much Greater";
+                    document.querySelector('.hint').value="Number Must in Range";
                     document.querySelector('.getnum').value="";
-                    document.querySelector('.getnum').setAttribute('placeholder','Enter Another Number');
-                }
-                else if (getNum.value < num){
-                    document.querySelector('.annc').innerHTML="You Have Only "+ --turn +" Turns";
-                    document.querySelector('.hint').value="It's Much Smaller";
-                    document.querySelector('.getnum').value="";
-                    document.querySelector('.getnum').setAttribute('placeholder','Enter Another Number');
                 }
                 else{
-                    document.querySelector('.annc').innerHTML="You Have Infinite Turns";
-                    document.querySelector('.hint').value="Let's Play Again";
-                    document.querySelector('.footer').innerHTML="!!! You Won Bro !!!";
-                    document.querySelector('.getnum').value="";
-                    document.querySelector('.check').setAttribute('disabled','disabled');
-                    document.querySelector('.getnum').setAttribute('disabled','disabled');
+                    if (getNum.value > num){
+                        document.querySelector('.annc').innerHTML="You Have Only "+ --turn +" Turns";
+                        document.querySelector('.hint').value="It's Much Greater";
+                        document.querySelector('.getnum').value="";
+                        document.querySelector('.getnum').setAttribute('placeholder','Enter Another Number');
+                    }
+                    else if (getNum.value < num){
+                        document.querySelector('.annc').innerHTML="You Have Only "+ --turn +" Turns";
+                        document.querySelector('.hint').value="It's Much Smaller";
+                        document.querySelector('.getnum').value="";
+                        document.querySelector('.getnum').setAttribute('placeholder','Enter Another Number');
+                    }
+                    else{
+                        document.querySelector('.annc').innerHTML="You Have Infinite Turns";
+                        document.querySelector('.hint').value="Let's Play Again";
+                        document.querySelector('.footer').innerHTML="!!! You Won Bro !!!";
+                        document.querySelector('.getnum').value="";
+                        document.querySelector('.check').setAttribute('disabled','disabled');
+                        document.querySelector('.getnum').setAttribute('disabled','disabled');
+                    }
+
                 }
+                
                 
             }
             else if (turn <= 1){
